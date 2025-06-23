@@ -11,13 +11,6 @@
 - 모든 아트(Aseprite)·사운드(Bosca Ceoil) 직접 제작
 - Android/원스토어 출시
 
-## 스크린샷
-<div align="center">
-<img src="Play_Images/Main.png" width="180"/>
-<img src="Play_Images/Gameover.png" width="180"/>
-<img src="Play_Images/Line_UX.png" width="180"/>
-</div>
-
 ## 다운로드 및 플레이 영상
 - [원스토어 다운로드](https://m.onestore.co.kr/ko-kr/apps/appsDetail.omp?prodId=0000781428)
 - [Youtube 플레이 영상](https://www.youtube.com/watch?v=osO16h3m1jg)
