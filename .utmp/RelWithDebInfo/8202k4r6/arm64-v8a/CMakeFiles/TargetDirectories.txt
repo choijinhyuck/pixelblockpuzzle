@@ -1,0 +1,8 @@
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/UnityProject/BlockBlock/.utmp/RelWithDebInfo/8202k4r6/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

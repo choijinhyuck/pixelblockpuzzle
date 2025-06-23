@@ -1,0 +1,23 @@
+# ninja log v5
+32	2101	7647123901773534	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c5e5d4a8b23d2632
+25	1993	7647123900839451	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1ad963b863862826
+47	2143	7647123902660869	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	cfce3ee219df8e24
+43	1916	7647123899191170	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	5aacbbd0aeae98bd
+6	2284	7647123904156272	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	6797623bb0e4b5a5
+11	2057	7647123901677279	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	721fd07e9b742876
+1917	2290	7647123904342880	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	97c22ddd2a1116b7
+21	2678	7647123908148295	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	99dbd7e7a7256ad2
+38	2193	7647123903216698	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	8eb550ca1642110d
+2291	2501	7647123906465730	C:/UnityProject/PixelBlockPuzzle/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n6j1c6v/obj/arm64-v8a/libswappywrapper.so	5f6c300d85cc377b
+2678	2803	7647123909475102	C:/UnityProject/PixelBlockPuzzle/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n6j1c6v/obj/arm64-v8a/libgame.so	6de79fa7ac38afd9
+21	2510	7657002911704370	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1ad963b863862826
+41	2605	7657002912525223	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	cfce3ee219df8e24
+37	2695	7657002913284978	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c5e5d4a8b23d2632
+16	2722	7657002913692990	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	721fd07e9b742876
+28	2787	7657002913921354	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	5aacbbd0aeae98bd
+5	2850	7657002915494304	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	6797623bb0e4b5a5
+2511	2902	7657002916135566	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	97c22ddd2a1116b7
+33	3051	7657002917512574	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	8eb550ca1642110d
+25	3128	7657002918364279	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	99dbd7e7a7256ad2
+2903	3456	7657002921668891	C:/UnityProject/PixelBlockPuzzle/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n6j1c6v/obj/arm64-v8a/libswappywrapper.so	5f6c300d85cc377b
+3129	3465	7657002921719053	C:/UnityProject/PixelBlockPuzzle/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n6j1c6v/obj/arm64-v8a/libgame.so	6de79fa7ac38afd9

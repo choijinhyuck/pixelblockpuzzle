@@ -1,0 +1,98 @@
+# === 기본 Unity 관련 ===
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# 빌드 플랫폼 관련
+*.apk
+*.aab
+*.unitypackage
+*.exe
+*.app
+
+# === 사용자 설정 파일 ===
+UserSettings/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.user
+*.pidb
+*.booproj
+
+# === OS 관련 ===
+.DS_Store
+Thumbs.db
+
+# === Crash 및 로그 파일 ===
+*.log
+*.stacktrace
+
+# === 버전관리 불필요한 설정파일 ===
+*.swp
+*.bak
+*.tmp
+
+# === 환경변수/민감정보 관련 ===
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+*.crt
+*.cert
+*.asc
+
+# === 광고 SDK / 스토어 관련 민감 정보 ===
+# 예: AdMob, Firebase, Facebook 등 API Key 관련 JSON/Plist 파일
+google-services.json
+GoogleService-Info.plist
+*.plist
+*.xcworkspace
+*.xcuserstate
+
+# === 주소값 및 설정 파일 예외 (원할 시 사용) ===
+# !Assets/AddressableAssetsData/**/*.*
+# !Assets/Plugins/Settings/*
+
+# === Unity Collaborate ===
+.collabignore
+.collab/
+
+# === Rider 설정 (JetBrains IDE) ===
+.idea/
+*.sln.iml
+
+# === Visual Studio 관련 ===
+.vs/
+*.suo
+*.userprefs
+
+# === MacOS, Windows, Linux OS별 임시 파일 ===
+ehthumbs.db
+Icon?
+Desktop.ini
+*.orig
+
+# === 빌드 산출물 ===
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+*.mdb
+
+# === Unity Cloud Build ===
+unitycloud/
+
+# === Crash Reports, Analytics, 기타 ===
+sysinfo.txt
+*.apk.idsig
+
+# === 기타 ===
+# 빌드 스크립트에서 임시 생성하는 파일 등
+*.bak~

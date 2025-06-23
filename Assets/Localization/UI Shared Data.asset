@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: b7afd05e2899ee34a88e490b70604843
+  m_Entries:
+  - m_Id: 20697350144
+    m_Key: Rank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135264763904
+    m_Key: Bgm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343952359424
+    m_Key: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 713164357632
+    m_Key: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 861223288832
+    m_Key: Revive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1047387471872
+    m_Key: NoSpace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 563318421487616
+    m_Key: Vibrate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 576441182355456
+    m_Key: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 576487126761472
+    m_Key: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 576789146009600
+    m_Key: ExitGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1542267511275520
+    m_Key: InputNickname
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1861304426463232
+    m_Key: Submit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1862818150776832
+    m_Key: TouchToEnter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1869869912457216
+    m_Key: NicknameInvalidCharacters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1869873670553600
+    m_Key: NicknameContainsBannedWord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1869874077401088
+    m_Key: NicknameTooLong
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1869878452060160
+    m_Key: NicknameEmpty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1869879144120320
+    m_Key: NicknameInvalid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1869879806820352
+    m_Key: NicknameValid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2415780858200064
+    m_Key: AppInfo
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2725554446698283008
+  references:
+    version: 2
+    RefIds:
+    - rid: 2725554446698283008
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1742079324862
