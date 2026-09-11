@@ -70,6 +70,9 @@ public class LeaderboardManager : MonoBehaviour
             submitNicknameButton.interactable = false;
             nicknameInputPanel.SetActive(false);
         }
+
+        // 게임 시작 시 로컬 BEST와 서버 점수 동기화
+        await SyncLocalBestWithServer();
     }
 
     async Task InitializeUnityServicesAsync()
@@ -87,6 +90,85 @@ public class LeaderboardManager : MonoBehaviour
         {
             Debug.LogError("Failed to initialize Unity Services: " + ex.Message);
         }
+    }
+
+    // 로컬 BEST 점수와 서버 점수를 동기화
+    // 로컬 BEST가 더 높으면 서버에 업데이트
+    private async Task SyncLocalBestWithServer()
+    {
+        try
+        {
+            // 로컬에서 BEST 점수 불러오기
+            int localBestScore = PlayerPrefs.GetInt("BestScore", 0);
+            
+            // 서버에서 현재 플레이어의 점수 불러오기
+            var myScoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(
+                leaderboardId, new GetPlayerScoreOptions { IncludeMetadata = true }
+            );
+
+            int serverScore = 0;
+            if (myScoreResponse != null)
+            {
+                serverScore = (int)myScoreResponse.Score;
+            }
+
+            // 로컬 BEST가 서버 점수보다 높으면 업데이트
+            if (localBestScore > serverScore)
+            {
+                Debug.Log($"Local BEST ({localBestScore}) is higher than server score ({serverScore}). Updating server...");
+                
+                // 서버에 점수 업데이트
+                // 먼저 기존 nickname 정보 가져오기
+                Dictionary<string, string> metadataData = new Dictionary<string, string>();
+                if (myScoreResponse != null)
+                {
+                    try
+                    {
+                        Dictionary<string, string> existingMetadata = JsonConvert.DeserializeObject<Dictionary<string, string>>(myScoreResponse.Metadata);
+                        if (existingMetadata != null && existingMetadata.TryGetValue("nickname", out string nickname))
+                        {
+                            metadataData["nickname"] = nickname;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogError("Failed to parse existing metadata: " + ex.Message);
+                    }
+                }
+
+                var options = new AddPlayerScoreOptions
+                {
+                    Metadata = metadataData
+                };
+
+                await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderboardId, localBestScore, options);
+                Debug.Log($"Server score updated to {localBestScore}");
+
+                // 리더보드 UI 갱신
+                try
+                {
+                    GetLeaderboard();
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning("Failed to refresh leaderboard after sync: " + ex.Message);
+                }
+            }
+            else
+            {
+                Debug.Log($"Local BEST ({localBestScore}) is not higher than server score ({serverScore}). No update needed.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Failed to sync local best with server: " + ex.Message);
+        }
+    }
+
+    // 게임 종료 후 로컬 BEST를 서버와 동기화 (ScoreManager에서 호출)
+    public async Task SyncLocalBestWithServerAfterGameEnd()
+    {
+        await SyncLocalBestWithServer();
     }
 
     // nickname을 인자로 받아 metadata 포함해서 스코어를 제출
@@ -169,10 +251,26 @@ public class LeaderboardManager : MonoBehaviour
             // 최초 점수 제출 (업데이트 시간 관련 로직 삭제)
             await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderboardId, score, options);
             Debug.Log("Score submitted: " + score + " with nickname: " + nickname);
+            // 제출이 성공하면 리더보드를 즉시 갱신하여 UI에 반영
+            try
+            {
+                GetLeaderboard();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("Failed to refresh leaderboard after submit: " + ex.Message);
+            }
         }
         catch (Exception ex)
         {
-            Debug.LogError("Failed to submit score: " + ex.Message);
+            if (ex is Unity.Services.Core.RequestFailedException rfe)
+            {
+                Debug.LogError($"Failed to submit score. RequestFailedException: ErrorCode={rfe.ErrorCode}, Message={rfe.Message}\n{rfe.StackTrace}");
+            }
+            else
+            {
+                Debug.LogError("Failed to submit score: " + ex.ToString());
+            }
         }
     }
 

@@ -41,6 +41,14 @@ public class ScoreManager : MonoBehaviour
         bestScore = PlayerPrefs.GetInt("BestScore", 0);
         UpdateBestScoreText();
     }
+
+    // 디버거에서 BestScore를 변경할 때 사용 (메모리와 PlayerPrefs 동기화)
+    public void SetBestScore(int newBestScore)
+    {
+        bestScore = Mathf.Max(0, newBestScore);
+        UpdateBestScoreText();
+        Debug.Log($"✓ ScoreManager bestScore updated to: {bestScore}");
+    }
     
     // Update the bestScoreText UI.
     private void UpdateBestScoreText()
@@ -135,12 +143,25 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Call this method on game over to save the best score in PlayerPrefs.
-    public void OnGameOver()
+    public async void OnGameOver()
     {
         PlayerPrefs.SetInt("BestScore", bestScore);
         PlayerPrefs.Save();
 
         GameManager.Instance.leaderboardManager.SubmitScore(score);
+        
+        // 게임 종료 후 로컬 BEST와 서버 점수 동기화 (약간의 지연 후)
+        // SubmitScore가 비동기이므로 완료될 시간을 준다
+        await System.Threading.Tasks.Task.Delay(1000);
+        
+        try
+        {
+            await GameManager.Instance.leaderboardManager.SyncLocalBestWithServerAfterGameEnd();
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("Failed to sync local best after game over: " + ex.Message);
+        }
     }
 
     private void UpdateScoreText()
